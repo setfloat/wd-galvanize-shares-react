@@ -7,36 +7,36 @@ const Bulletins = React.createClass({
   render() {
     const { editing, params } = this.props;
     let { bulletins } = this.props;
-    {/* let bulletins = this.props.bulletins; */}
+
+    { /* let bulletins = this.props.bulletins; */}
 
     if (params.topic) {
       bulletins = bulletins.filter((bulletin) => bulletin.topic === params.topic);
     }
 
-    //puts the order that posts will appear, in this case by vote count
+    // puts the order that posts will appear, in this case by vote count
     bulletins.sort((p1, p2) => p1.votes < p2.votes);
 
-
-      //the .map
+      // the .map
     return <main>
     {bulletins.map((bulletin) => {
-
       if (bulletin === editing) {
         return <BulletinForm
-        key={weakKey(bulletin)}
-        bulletin={bulletin}
-        updateBulletin={this.props.updateBulletin}
-          stopEditingBulletin={this.props.stopEditingBulletin} />;
+          bulletin={bulletin}
+          key={weakKey(bulletin)}
+          stopEditingBulletin={this.props.stopEditingBulletin}
+          updateBulletin={this.props.updateBulletin}
+        />;
       }
 
       return <Bulletin
-        key={weakKey(bulletin)}
         bulletin={bulletin}
-        incrementVotes={this.props.incrementVotes}
         decrementVotes={this.props.decrementVotes}
-      />
+        incrementVotes={this.props.incrementVotes}
+        key={weakKey(bulletin)}
+      />;
     })}
-    </main>
+    </main>;
   }
 });
 
