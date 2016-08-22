@@ -20,7 +20,8 @@ const App = React.createClass({
         this.setState({ bulletins: res.data });
       })
       .catch((err) => {
-        console.log(err)});
+        console.log(err);
+      });
   },
 
   handleTouchTap() {

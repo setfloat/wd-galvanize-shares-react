@@ -50,6 +50,7 @@ const Bulletin = React.createClass({
 
     const styleTitle = {
       fontSize: '22px',
+
       // lineHeight: '36px',
       textDecoration: 'none'
     };
@@ -65,18 +66,17 @@ const Bulletin = React.createClass({
       marginRight: '8px'
     });
 
-    return <Paper style={stylePaper} className="paper">
-    <aside style={styleAside}>
-      <KeyboardArrowUp onTouchTap={this.handleTouchTapUp} />
-      <div style={styleVotes}>{bulletin.votes}</div>
-      <KeyboardArrowDown onTouchTap={this.handleTouchTapDown}/>
-    </aside>
-
-    <article>
-      <a href={bulletin.url} style={styleTitle}>
-        {bulletin.title}
-      </a>
-      <div style={styleSubTitle}>
+    return <Paper className="paper" style={stylePaper}>
+      <aside style={styleAside}>
+        <KeyboardArrowUp onTouchTap={this.handleTouchTapUp} />
+        <div style={styleVotes}>{bulletin.votes}</div>
+        <KeyboardArrowDown onTouchTap={this.handleTouchTapDown}/>
+      </aside>
+      <article>
+        <a href={bulletin.url} style={styleTitle}>
+          {bulletin.title}
+        </a>
+        <div style={styleSubTitle}>
         submitted by {bulletin.submitter} to {' '}
 
         <Link style={styleTopic} to={`/topics/${bulletin.topic}`}>
