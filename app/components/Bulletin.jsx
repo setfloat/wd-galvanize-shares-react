@@ -1,9 +1,9 @@
 import KeyboardArrowDown
 from 'material-ui/svg-icons/hardware/keyboard-arrow-down';
-import React from 'react';
 import KeyboardArrowUp from 'material-ui/svg-icons/hardware/keyboard-arrow-up';
 import { Link } from 'react-router';
 import Paper from 'material-ui/Paper';
+import React from 'react';
 
 const Bulletin = React.createClass({
   contextTypes: {
@@ -22,13 +22,14 @@ const Bulletin = React.createClass({
     this.props.decrementVotes(this.props.bulletin);
   },
 
-
   render() {
     const { bulletin } = this.props;
+
     // const bulletin = this.props.bulletin;
 
     const stylePaper = {
-      display: 'flex',
+      display: 'flex'
+
       // margin: '10px',
       // padding: '16px'
       // migrated to style sheet as .paper
